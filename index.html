@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineMatch - Smart Recommendations</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+            <div class="logo-icon"></div>
+            <h1>CineMatch</h1>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <h2>Maximize Your Watch Time</h2>
+        <p>Tell us how much time you have, and our smart algorithm will curate the perfect watchlist with the highest
+            overall ratings.</p>
+
+        <div class="controls-container">
+            <div class="input-group">
+                <label for="language-filter">Language Preference</label>
+                <select id="language-filter">
+                    <option value="All">All Languages</option>
+                    <option value="Telugu">Telugu</option>
+                    <option value="English">English</option>
+                    <option value="Hindi">Hindi</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="total-time">Available Time (mins)</label>
+                <input type="number" id="total-time" placeholder="e.g., 200" min="1">
+            </div>
+
+            <button id="recommend-btn" class="btn accent-btn pulse">Get Recommendations</button>
+        </div>
+    </div>
+
+    <main class="app-container">
+        <section id="result-wrapper" class="result-wrapper hidden">
+            <div class="result-header">
+                <h2>Your Optimal Watchlist</h2>
+                <button id="close-results-btn" class="close-btn">&times;</button>
+            </div>
+
+            <div class="result-summary">
+                <div class="stat-box">
+                    <span class="stat-label">Total Time Used</span>
+                    <span class="stat-value" id="time-used-display">0 <span class="unit">min</span></span>
+                </div>
+                <div class="stat-box highlight">
+                    <span class="stat-label">Total Rating</span>
+                    <span class="stat-value" id="max-rating-display">0 <span class="unit">/ 10</span></span>
+                </div>
+            </div>
+
+            <div id="recommended-grid" class="movie-grid result-grid">
+                <!-- Recommended movie cards injected here -->
+            </div>
+        </section>
+
+        <section class="movie-library">
+            <div class="library-header">
+                <h2>Featured Movies</h2>
+                <span class="movie-count" id="movie-count">0 movies</span>
+            </div>
+            <div id="movie-grid" class="movie-grid">
+                <!-- Movie cards injected here -->
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
